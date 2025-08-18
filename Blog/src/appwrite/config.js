@@ -128,6 +128,7 @@ constructor(){
             conf.appwriteBucketId,
             fileId
         )
+        //this returns an url
     }
 }    
 
