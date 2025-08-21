@@ -17,8 +17,10 @@ function Login() {
         setError("")
         try {
             const session = await authService.login(data)
+             if (!session) throw new Error("Login failed");
             if (session) {
                 const userData = await authService.getCurrentUser()
+                 if (!userData) throw new Error("Failed to fetch user data");
                 if(userData) dispatch(authLogin(userData));
                 navigate("/")
             }

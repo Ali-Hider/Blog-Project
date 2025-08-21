@@ -7,13 +7,13 @@ databases;
 bucket;
 constructor(){
     this.client
-    .setEndpoint(appwriteUrl)
-    .setProject(appwriteProjectId);
+    .setEndpoint(conf.appwriteUrl)
+    .setProject(conf.appwriteProjectId);
     this.databases = new Databases(this.client)
     this.bucket = new Storage(this.client)
 }
 
- async createPost({title, slug, content, featuredImage, status, userId}){
+ async createPost({title, slug, content, featuredImage, status, userID}){
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -24,7 +24,7 @@ constructor(){
                     content,
                     featuredImage,
                     status,
-                    userId,
+                    userID,
                 }
             )
         } catch (error) {
@@ -123,8 +123,8 @@ constructor(){
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+    getFileView(fileId){
+        return this.bucket.getFileView(
             conf.appwriteBucketId,
             fileId
         )

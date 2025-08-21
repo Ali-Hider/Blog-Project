@@ -17,8 +17,14 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
-
+     console.log("Redux auth state:", useSelector((state) => state.auth));
     const submit = async (data) => {
+        console.log("Submit triggered!", data);
+        if (!userData) {
+    console.error("User not logged in or user data not loaded!");
+    return;
+}
+
         if (post) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
 
@@ -36,11 +42,11 @@ export default function PostForm({ post }) {
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
-
+       
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+                const dbPost = await appwriteService.createPost({ ...data, userID: userData?.$id });
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
@@ -100,8 +106,9 @@ export default function PostForm({ post }) {
                 />
                 {post && (
                     <div className="w-full mb-4">
+                        
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={appwriteService.getFileView(post.featuredImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />
