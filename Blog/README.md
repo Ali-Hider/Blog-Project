@@ -1,12 +1,36 @@
-# React + Vite
+<h1 align="center">Welcome to Blog 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/Blog" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/Blog.svg">
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A full-stack blogging platform where users can create, edit, and manage posts with images. Built using React, Appwrite, and Tailwind CSS, it provides authentication, real-time data sync, and a clean UI for modern blogging.
 
-Currently, two official plugins are available:
+### ✨ [Demo](https://github.com/Ali-Hider/Blog-Project)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Install
 
-## Expanding the ESLint configuration
+```sh
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+```sh
+npm run dev
+```
+
+## Author
+
+👤 **MD Ali Hider**
+
+* Github: [@Ali-Hider](https://github.com/Ali-Hider)
+* LinkedIn: [@alihider](https://linkedin.com/in/alihider)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
